@@ -1,0 +1,14 @@
+<mvc:View 
+	xmlns="sap.m" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+	controllerName="ZP04.Z_Presentation_04.controller.Home" 
+	displayBlock="true" 
+	height="100%">
+	
+	<Page id="homepage" showHeader="false" title="Home Page">
+		<content>
+			<Title text="Welcome Friends"></Title>
+		</content>
+	</Page>
+</mvc:View>

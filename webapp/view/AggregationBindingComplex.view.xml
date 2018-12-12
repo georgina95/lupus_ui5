@@ -1,0 +1,27 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="ZP04.Z_Presentation_04.controller.AggregationBindingComplex" displayBlock="true" height="100%">
+	
+	<Page id="aggregationbindinglist" showHeader="false" title="">
+		<content>
+			<FlexBox width="100%">
+				<IconTabBar items="{foodModel>/foods}">
+					<items>
+						<IconTabFilter icon="{foodModel>icon}" text="{foodModel>type}">
+							<List headerText="{foodModel>type}" mode="None" items="{foodModel>items}" width="100%">
+								<CustomListItem>
+									<HBox>
+										<Image src="{foodModel>picture}" densityAware="false" width="100px"/>
+										<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+											<Title text="{foodModel>name}"/>
+											<ObjectNumber class="sapUiSmallMarginBottom" number="{foodModel>weight}" unit="{foodModel>uom}"/>
+										</VBox>
+									</HBox>
+								</CustomListItem>
+							</List>
+						</IconTabFilter>
+					</items>
+				</IconTabBar>
+				
+			</FlexBox>
+		</content>
+	</Page>
+</mvc:View>

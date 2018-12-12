@@ -1,0 +1,36 @@
+<mvc:View 
+	xmlns="sap.m" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:semantic="sap.m.semantic" 
+	xmlns:table="sap.ui.table" 
+	xmlns:tnt="sap.tnt"
+ 	controllerName="ZP04.Z_Presentation_04.controller.Menu">
+
+
+	<Page id="page" showHeader="false" title="MasterHome">
+        <content>
+            <tnt:NavigationList id="navigationList" width="320px" >
+				<tnt:NavigationListItem
+					key="home"
+					text="{i18n>Home}"
+					icon="sap-icon://home"
+					select="onSelectMenu">
+				</tnt:NavigationListItem>
+				<tnt:NavigationListItem
+						text="{i18n>DataBinding}"
+						icon="sap-icon://horizontal-combination-chart">
+					<tnt:NavigationListItem text="{i18n>DataBindingInput}" key="dataBindingInput" select="onSelectMenu"/>
+					<tnt:NavigationListItem text="{i18n>DataBindingChart}" key="dataBindingChart" select="onSelectMenu"/>
+				</tnt:NavigationListItem>
+				<tnt:NavigationListItem
+						text="{i18n>AggregationBinding}"
+						icon="sap-icon://overview-chart">
+					<tnt:NavigationListItem text="{i18n>DataAggregationList}" key="aggregationBindingList" select="onSelectMenu"/>
+					<tnt:NavigationListItem text="{i18n>DataAggregationComplex}" key="aggregationBindingComplex" select="onSelectMenu"/>
+				</tnt:NavigationListItem>
+				
+			</tnt:NavigationList>
+        </content>
+	</Page>
+	
+</mvc:View>

@@ -1,0 +1,6 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="ZP04.Z_Presentation_04.controller.Main" displayBlock="true" height="100%">
+	
+	<Page id="page" showHeader="true" title="{i18n>appTitle}">
+		<SplitApp id="idAppControl" mode="StretchCompressMode"/>
+	</Page>
+</mvc:View>

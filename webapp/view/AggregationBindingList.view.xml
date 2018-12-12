@@ -1,0 +1,20 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="ZP04.Z_Presentation_04.controller.AggregationBindingList" displayBlock="true" height="100%">
+	
+	<Page id="aggregationbindinglist" showHeader="false" title="">
+		<content>
+			<FlexBox width="100%">
+				<List headerText="{i18n>titleFruits}" mode="None" items="{fruitModel>/fruits}" width="100%">
+					<CustomListItem>
+						<HBox>
+							<Image src="{fruitModel>picture}" densityAware="false" width="100px"/>
+							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+								<Title text="{fruitModel>name}"/>
+								<ObjectNumber class="sapUiSmallMarginBottom" number="{fruitModel>weight}" unit="{fruitModel>uom}"/>
+							</VBox>
+						</HBox>
+					</CustomListItem>
+				</List>
+			</FlexBox>
+		</content>
+	</Page>
+</mvc:View>

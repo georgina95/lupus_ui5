@@ -1,0 +1,45 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:chart="sap.suite.ui.microchart" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="ZP04.Z_Presentation_04.controller.DataBindingChart" displayBlock="true" height="100%">
+	
+	<Page id="databindingchart" showHeader="false" title="{i18n>DataBindingChart}">
+		<content>
+			<VBox>
+				<items>
+					<FlexBox justifyContent="SpaceBetween" alignContent="Center">
+						<items>
+							<chart:InteractiveDonutChart>
+								<chart:segments>
+									<chart:InteractiveDonutChartSegment label="{i18n>labelWomen}" value="{path:'ChartModel>/Women'}" displayedValue="{path:'ChartModel>/Women'}"/>
+									<chart:InteractiveDonutChartSegment label="{i18n>labelMen}" value="{path:'ChartModel>/Men'}" displayedValue="{path:'ChartModel>/Men'}"/>
+									<chart:InteractiveDonutChartSegment label="{i18n>labelNeutral}" value="{path:'ChartModel>/Neutral'}" displayedValue="{path:'ChartModel>/Neutral'}"/>
+								</chart:segments>
+							</chart:InteractiveDonutChart>
+						</items>
+					</FlexBox>
+					<HBox>
+						<items>
+							<HBox alignContent="SpaceBetween" alignItems="Center" justifyContent="SpaceBetween">
+								<items>
+									<Text text="{i18n>labelWomen}"/>
+									<StepInput id="idStepInputWomen" value="{ChartModel>/Women}" min="0" step="1" validationMode="LiveChange" width="50%" class="sapUiSmallMargin"/>
+								</items>
+							</HBox>
+							<HBox alignItems="Center" justifyContent="End">
+								<items>
+									<Text text="{i18n>labelMen}"/>
+									<StepInput id="idStepInputMen" value="{ChartModel>/Men}" min="0" step="1" validationMode="LiveChange" width="50%" class="sapUiSmallMargin"/>
+								</items>
+							</HBox>
+							<HBox alignItems="Center" alignContent="Center">
+								<items>
+									<Text text="{i18n>labelNeutral}"/>
+									<StepInput id="idStepInputNeutral" value="{ChartModel>/Neutral}" min="0" step="1" validationMode="LiveChange" width="50%" class="sapUiSmallMargin"/>
+								</items>
+							</HBox>
+						</items>
+					</HBox>
+				</items>
+			</VBox>
+
+		</content>
+	</Page>
+</mvc:View>
