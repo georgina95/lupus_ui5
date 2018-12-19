@@ -1,0 +1,84 @@
+<mvc:View xmlns="sap.m" 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+	controllerName="ZP04.Z_Presentation_04.controller.Filtering" displayBlock="true" height="100%">
+	
+	<Page id="filtering" showHeader="false" title="">
+		<content>
+			<VBox width="100%">
+				<f:Form id="idFilterCriteria" editable="true">
+					<f:title>
+						<core:Title text="{i18n>FilterCriteria}" />
+					</f:title>
+					<f:layout>
+						<f:ResponsiveGridLayout
+							labelSpanXL="3"
+							labelSpanL="3"
+							labelSpanM="4"
+							labelSpanS="12"
+							adjustLabelSpan="false"
+							emptySpanXL="4"
+							emptySpanL="4"
+							emptySpanM="0"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="2"
+							singleContainerFullSize="false" />
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="Name">
+									<f:fields>
+										<Input value="{settings>/expression}"/>
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="Relation">
+									<f:fields>
+										<RadioButtonGroup columns="5" buttons="{settings>/relation}">
+											<buttons>
+												<RadioButton text="{settings>text}" selected="{settings>selected}"/>
+											</buttons>
+										</RadioButtonGroup>
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+				<Button text="Apply Filters" press="applyFilters" type="Accept"/>
+			</VBox>
+			<FlexBox width="100%">
+				<List id="idPeopleListFilter" headerText="{i18n>titlePeople}" mode="None" items="{People>/people}" width="100%">
+					<items>
+						<ObjectListItem
+							title="{parts: [ { path: 'People>name/first' }, { path: 'People>name/last' } ], formatter: '.formatName' }"
+							type="Active"
+							number="{People>age}"
+							numberUnit="yrs">
+							<firstStatus>
+								<ObjectStatus
+									text="{People>eyeColor}"
+									state="{
+										path: 'People>eyeColor',
+										formatter: '.formatEyecolor'
+									}" />
+							</firstStatus>
+							<attributes>
+								<ObjectAttribute title="index" text="{People>index}" />
+							</attributes>
+						</ObjectListItem>
+					</items>
+				</List>
+			</FlexBox>
+		</content>
+	</Page>
+</mvc:View>

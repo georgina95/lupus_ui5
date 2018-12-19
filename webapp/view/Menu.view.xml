@@ -28,6 +28,12 @@
 					<tnt:NavigationListItem text="{i18n>DataAggregationList}" key="aggregationBindingList" select="onSelectMenu"/>
 					<tnt:NavigationListItem text="{i18n>DataAggregationComplex}" key="aggregationBindingComplex" select="onSelectMenu"/>
 				</tnt:NavigationListItem>
+				<tnt:NavigationListItem
+						text="{i18n>SortingFiltering}"
+						icon="sap-icon://action-settings">
+					<tnt:NavigationListItem text="{i18n>Sorting}" key="sorting" select="onSelectMenu"/>
+					<tnt:NavigationListItem text="{i18n>Filtering}" key="filtering" select="onSelectMenu"/>
+				</tnt:NavigationListItem>
 				
 			</tnt:NavigationList>
         </content>

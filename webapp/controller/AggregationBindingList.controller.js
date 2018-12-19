@@ -1,6 +1,7 @@
 sap.ui.define([
+	'sap/ui/model/Sorter',
 	"sap/ui/core/mvc/Controller"
-], function (Controller) {
+], function (Sorter, Controller) {
 	"use strict";
 
 	return Controller.extend("ZP04.Z_Presentation_04.controller.AggregationBindingList", {
@@ -11,6 +12,10 @@ sap.ui.define([
 				oView.setModel(oModel, "People");
 		},
 		
+		formatName: function(sFirst, sLast) {
+			return sLast + ", " + sFirst;
+		},
+		
 		formatEyecolor: function(sColor) {
 			switch(sColor) {
 				case "blue":	return "Information";
@@ -18,5 +23,6 @@ sap.ui.define([
 				default:		return "Error";
 			} 
 		}
+		
 	});
 });

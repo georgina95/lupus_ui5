@@ -14,7 +14,6 @@
 			"version": "1.40.12"
 		}
 	},
-
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {
@@ -30,13 +29,8 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": [
-			"sap_hcb",
-			"sap_belize"
-
-		]
+		"supportedThemes": ["sap_hcb", "sap_belize"]
 	},
-
 	"sap.ui5": {
 		"rootView": {
 			"viewName": "ZP04.Z_Presentation_04.view.Main",
@@ -81,33 +75,43 @@
 				"clearControlAggregation": false
 			},
 			"routes": [{
-					"pattern": "",
-					"name": "master",
-					"target": ["master"],
-					"targetAggregation": "masterPages"
-				}, {
-					"pattern": "home",
-					"name": "home",
-					"target": ["master", "home"]
-				}, {
-					"pattern": "dataBindingInput",
-					"name": "dataBindingInput",
-					"target": ["master", "dataBindingInput"]
-				}, {
-					"pattern": "dataBindingChart",
-					"name": "dataBindingChart",
-					"target": ["master", "dataBindingChart"]
-				}, {
-					"pattern": "aggregationBindingList",
-					"name": "aggregationBindingList",
-					"target": ["master", "aggregationBindingList"]
-				}, {
-					"pattern": "aggregationBindingComplex",
-					"name": "aggregationBindingComplex",
-					"target": ["master", "aggregationBindingComplex"]
-				}
-
-			],
+				"pattern": "",
+				"name": "master",
+				"target": ["master"],
+				"targetAggregation": "masterPages"
+			}, {
+				"pattern": "home",
+				"name": "home",
+				"target": ["master", "home"]
+			}, {
+				"pattern": "dataBindingInput",
+				"name": "dataBindingInput",
+				"target": ["master", "dataBindingInput"]
+			}, {
+				"pattern": "dataBindingChart",
+				"name": "dataBindingChart",
+				"target": ["master", "dataBindingChart"]
+			}, {
+				"pattern": "aggregationBindingList",
+				"name": "aggregationBindingList",
+				"target": ["master", "aggregationBindingList"]
+			}, {
+				"pattern": "aggregationBindingComplex",
+				"name": "aggregationBindingComplex",
+				"target": ["master", "aggregationBindingComplex"]
+			}, {
+				"name": "sorting",
+				"pattern": "sorting",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["sorting"]
+			}, {
+				"name": "filtering",
+				"pattern": "filtering",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["filtering"]
+			}],
 			"targets": {
 				"master": {
 					"viewName": "Menu",
@@ -134,6 +138,18 @@
 				"aggregationBindingComplex": {
 					"viewName": "AggregationBindingComplex",
 					"viewId": "aggregationbindingcomplex"
+				},
+				"sorting": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": "",
+					"viewName": "Sorting"
+				},
+				"filtering": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "Filtering"
 				}
 			}
 		}

@@ -3,7 +3,7 @@
 	<Page id="aggregationbindinglist" showHeader="false" title="">
 		<content>
 			<FlexBox width="100%">
-				<List headerText="{i18n>titlePeople}" mode="None" items="{People>/people}" width="100%">
+				<List id="idPeopleList" headerText="{i18n>titlePeople}" mode="None" items="{People>/people}" width="100%">
 					<items>
 						<ObjectListItem
 							title="{parts: [ { path: 'People>name/first' }, { path: 'People>name/last' } ], formatter: '.formatName' }"
@@ -12,16 +12,16 @@
 							numberUnit="yrs">
 							<firstStatus>
 								<ObjectStatus
-									text="{People>eyecolor}"
+									text="{People>eyeColor}"
 									state="{
-										path: 'People>eyecolor',
+										path: 'People>eyeColor',
 										formatter: '.formatEyecolor'
 									}" />
 							</firstStatus>
 							<attributes>
 								<ObjectAttribute title="index" text="{People>index}" />
 							</attributes>
-			</ObjectListItem>
+						</ObjectListItem>
 					</items>
 				</List>
 			</FlexBox>
