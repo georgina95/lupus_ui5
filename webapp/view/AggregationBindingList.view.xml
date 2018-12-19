@@ -3,16 +3,26 @@
 	<Page id="aggregationbindinglist" showHeader="false" title="">
 		<content>
 			<FlexBox width="100%">
-				<List headerText="{i18n>titleFruits}" mode="None" items="{fruitModel>/fruits}" width="100%">
-					<CustomListItem>
-						<HBox>
-							<Image src="{fruitModel>picture}" densityAware="false" width="100px"/>
-							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
-								<Title text="{fruitModel>name}"/>
-								<ObjectNumber class="sapUiSmallMarginBottom" number="{fruitModel>weight}" unit="{fruitModel>uom}"/>
-							</VBox>
-						</HBox>
-					</CustomListItem>
+				<List headerText="{i18n>titlePeople}" mode="None" items="{People>/people}" width="100%">
+					<items>
+						<ObjectListItem
+							title="{parts: [ { path: 'People>name/first' }, { path: 'People>name/last' } ], formatter: '.formatName' }"
+							type="Active"
+							number="{People>age}"
+							numberUnit="yrs">
+							<firstStatus>
+								<ObjectStatus
+									text="{People>eyecolor}"
+									state="{
+										path: 'People>eyecolor',
+										formatter: '.formatEyecolor'
+									}" />
+							</firstStatus>
+							<attributes>
+								<ObjectAttribute title="index" text="{People>index}" />
+							</attributes>
+			</ObjectListItem>
+					</items>
 				</List>
 			</FlexBox>
 		</content>
